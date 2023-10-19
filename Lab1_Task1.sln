@@ -1,31 +1,36 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.7.34031.279
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab1_Task1", "Lab1_Task1\Lab1_Task1.vcxproj", "{9341565C-4C34-4DB2-AA03-C010310D5032}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9341565C-4C34-4DB2-AA03-C010310D5032}.Debug|x64.ActiveCfg = Debug|x64
-		{9341565C-4C34-4DB2-AA03-C010310D5032}.Debug|x64.Build.0 = Debug|x64
-		{9341565C-4C34-4DB2-AA03-C010310D5032}.Debug|x86.ActiveCfg = Debug|Win32
-		{9341565C-4C34-4DB2-AA03-C010310D5032}.Debug|x86.Build.0 = Debug|Win32
-		{9341565C-4C34-4DB2-AA03-C010310D5032}.Release|x64.ActiveCfg = Release|x64
-		{9341565C-4C34-4DB2-AA03-C010310D5032}.Release|x64.Build.0 = Release|x64
-		{9341565C-4C34-4DB2-AA03-C010310D5032}.Release|x86.ActiveCfg = Release|Win32
-		{9341565C-4C34-4DB2-AA03-C010310D5032}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7257BA76-13F3-49FB-9C26-B39293E423F5}
-	EndGlobalSection
-EndGlobal
+//Token Identification Part-1
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+bool isNumeric(string input) {
+    bool numeric = true;
+    for (int i = 0; i < input.length(); i++) {
+        if (input[i] < '0' || input[i] > '9') {
+            numeric = false;
+            break;
+        }
+    }
+    return numeric;
+}
+
+int main() {
+    string input;
+    bool numeric = true;
+    cout << "Enter a value: ";
+    cin >> input;
+    for (int i = 0; i < input.length(); i++) {
+        if (input[i] < '0' || input[i] > '9') {
+            numeric = false;
+            break;
+        }
+    }
+    if (numeric) {
+        cout << "The given input is numeric." << endl;
+    }
+    else {
+        cout << "The given input is non-numeric." << endl;
+    }
+    return 0;
+}
